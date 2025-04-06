@@ -130,38 +130,61 @@
        .ul-actvities li:last-child {
            border-bottom: none;
        }
+
+       #language-selector {
+          padding: 8px;
+          font-size: 16px;
+          position:absolute;
+          top: 12px;
+          right: 12px;
+          background-color: #ffffff;
+       }
    </style>
 </head>
 <body>
 
     <header>
-        <h1> Bay Bay </h1>
-
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="vi">Vietnamese</option>
+            <option value="ch">Chinese Simplified</option>
+        </select>
+        <h1>Bay Bay</h1>
     </header>
 
     <main>
         <div id="input-area">
-            <label for="destination">Destination:</label>
-            <input type="text" id="destination" placeholder="Enter your destination">
 
-            <label for="start-date">Start Date:</label>
-            <input type="date" id="start-date">
+            <label data-en="Origin: " data-es="Origen: " data-vi="Nguồn Gốc: " data-ch="起源: ">Origin: </label>
+            <input type="text" id="origin" placeholder="Enter your origin" data-en="Enter your origin" data-es="Ingrese su origen" data-vi="Nhập nguồn gốc của bạn" data-ch="输入您的起源">
 
-            <label for="end-date">End Date:</label>
-            <input type="date" id="end-date">
+            <label data-en="Destination: " data-es="Destino: " data-vi="Điểm Đến: " data-ch="目的地: ">Destination: </label>
+            <input type="text" id="destination" placeholder="Enter your destination" data-en="Enter your destination" data-es="Ingrese su destino" data-vi="Nhập điểm đến của bạn" data-ch="输入您的目的地">
 
-            <button id="generate-itinerary">Generate Itinerary</button>
+            <label data-en="Start Date: " data-es="Fecha de Inicio: " data-vi="Ngày Bắt Đầu: " data-ch="开始日期: ">Start Date: </label>
+            <input type="date" id="start-date" data-en="Start Date" data-es="Fecha de Inicio" data-vi="Ngày Bắt Đầu" data-ch="开始日期">
+
+            <label data-en="End Date: " data-es="Fecha de Fin: " data-vi="Ngày Kết Thúc: " data-ch="结束日期: ">End Date: </label>
+            <input type="date" id="end-date" data-en="End Date" data-es="Fecha de Fin" data-vi="Ngày Kết Thúc" data-ch="结束日期">
+
+            <button id="generate-itinerary" data-en="Generate Itinerary" data-es="Generar Itinerario" data-vi="Tạo Lịch Trình" data-ch="生成行程">Generate Itinerary</button>
         </div>
-
         <div id="itinerary">
-            <h2>Your Itinerary</h2>
+            <div style="flex: 0;"></div>
+            <h2 data-en="Your Itinerary" data-es="Tu Itinerario" data-vi="Lịch Trình Của Bạn" data-ch="您的行程">Your Itinerary</h2>
             <ul class="ul-actvities" id="activities-list"></ul>
+            </div>
         </div>
-    </main>
+        </main>
 
-    <footer>
+        <footer>
         <p>&copy; 2023 Bay Bay. All rights reserved.</p>
         <p>Created by Tyler Quach</p>
     </footer>
+
+    <script src ="main.js"></script>
+</body>
+</html>
 
     
